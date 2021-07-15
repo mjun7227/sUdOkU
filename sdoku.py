@@ -48,7 +48,8 @@ def solve_sudoku(y,x): #재귀함수
     for ey in range(n):
         for ex in range(n):
             if sudoku[ey][ex]==0:
-                empty.append([ey,ex]) #비어있는 블록 구하기
+                if (ey==y and ex>x) or ey>y:
+                    empty.append([ey,ex]) #비어있는 블록 구하기
 
     for i in candidate:
         sudoku[y][x]=i
@@ -56,19 +57,23 @@ def solve_sudoku(y,x): #재귀함수
         if len(empty) ==0 : #다 채워졌다면 출력후 빠져나가기
             cnt+=1
             ans.append(sudoku)
+            print(cnt)
             for i in sudoku:
                 print(i)
             sudoku[y][x]=0
-            print(cnt)
-            sys.exit()
-
-        solve_sudoku(empty[0][0],empty[0][1]) #재귀
+            
+            # sys.exit()
+        # for j in empty:
+            # if (j[0]==y and j[1]>=x) or j[0]>y:
+                # solve_sudoku(j[0],j[1]) #재귀
+        else:
+            solve_sudoku(empty[0][0],empty[0][1])
     
     sudoku[y][x]=0 #다시 칸 비우기
     return
 
 
-f=open("s2.txt",'r')
+f=open("s1.txt",'r')
 str=f.readlines()
 for line in str:
     sudoku.append(list(map(int,line.split(" "))))
@@ -85,3 +90,5 @@ for i in sudoku:
 
 
 solve_sudoku(empty[0][0],empty[0][1])
+
+print("finish")
