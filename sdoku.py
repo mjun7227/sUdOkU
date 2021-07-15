@@ -7,7 +7,7 @@ n=9
 ans=[]
 loop=0
 
-def solve_sudoku(y,x): #재귀함수
+def solve_sudoku(y,x): #으악 스파게티 코드
     global loop
     global cnt
     global sudoku
@@ -90,5 +90,8 @@ for i in sudoku:
 
 
 solve_sudoku(empty[0][0],empty[0][1])
+<<<<<<< HEAD
 
 print("finish")
+=======
+>>>>>>> 4864e810a6bdf49a0c369151c5696b42550baa7e
