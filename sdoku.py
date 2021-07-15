@@ -62,10 +62,7 @@ def solve_sudoku(y,x): #으악 스파게티 코드
                 print(i)
             sudoku[y][x]=0
             
-            # sys.exit()
-        # for j in empty:
-            # if (j[0]==y and j[1]>=x) or j[0]>y:
-                # solve_sudoku(j[0],j[1]) #재귀
+        
         else:
             solve_sudoku(empty[0][0],empty[0][1])
     
@@ -90,8 +87,5 @@ for i in sudoku:
 
 
 solve_sudoku(empty[0][0],empty[0][1])
-<<<<<<< HEAD
 
 print("finish")
-=======
->>>>>>> 4864e810a6bdf49a0c369151c5696b42550baa7e
