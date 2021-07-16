@@ -7,6 +7,7 @@ n=9
 ans=[]
 loop=0
 
+
 def solve_sudoku(y,x): #으악 스파게티 코드
     global loop
     global cnt
@@ -36,7 +37,7 @@ def solve_sudoku(y,x): #으악 스파게티 코드
             else:
                 box.remove(sudoku[by+i][bx+j]) #박스에서 남는 수 구하기 
 
-    candidate= list((set(row) & set(column)) &set(box)) #칸에 들어갈 후보 구하기
+    candidate= list((set(row) & set(column)) &set(box)) #칸에 들어갈 숫자 후보 구하기
 
     if not len(candidate): # 칸에 들어갈 후보가 없다면 돌아가기
         return
